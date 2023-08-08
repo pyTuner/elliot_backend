@@ -17,6 +17,12 @@ const createUser = async (req) => {
     }
 }
 
+const readUsers = async (req) => {
+    try {
+        // const user = userData.find
+    }
+}
+
 
 module.exports = {
     createUser
