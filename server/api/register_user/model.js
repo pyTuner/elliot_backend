@@ -65,7 +65,8 @@ const userSchema = new mongoose.Schema({
     email: emailVal,
     mobno: mobnumVal,
     subscription: subscriptionVal,
-    passwd: passwordVal
+    passwd: passwordVal,
+    cpasswd: passwordVal
 })
 
 // middleware for the password
@@ -74,6 +75,7 @@ userSchema.pre('save', async function (next) {
         this.passwd = await bcrypt.hash(this.passwd, 12);
         // console.log('ecrypted');
     }
+
     next();
 })
 
